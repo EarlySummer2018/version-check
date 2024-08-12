@@ -13,17 +13,6 @@ export default {
   components: {
     HelloWorld
   },
-  mounted() {
-    navigator.serviceWorker.addEventListener('message', (event) => {
-      console.log(event);
-      if (event.data && event.data.type === 'UPDATE_AVAILABLE') {
-        const result = window.confirm('检测到有新版本，是否更新？')
-        if (result) {
-          window.location.reload();
-        }
-      }
-    });
-  },
 }
 </script>
 
