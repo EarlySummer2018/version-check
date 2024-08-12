@@ -5,7 +5,7 @@ Vue.config.productionTip = false
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js').then((registration) => {
-      console.log('ServiceWorker registered: ', registration);
+      console.log('ServiceWorker registered2: ', registration);
       navigator.serviceWorker.addEventListener('message', (event) => {
         console.log('Received message from service worker:', event);
         if (event.data && event.data.type === 'UPDATE_AVAILABLE') {

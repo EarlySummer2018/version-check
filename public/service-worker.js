@@ -31,6 +31,7 @@ function checkForUpdates(newVersion) {
     caches.open(CACHE_NAME).then((cache) => {
       cache.match(VERSION_FILE).then((response) => {
         if (response) {
+          console.log('版本信息：', response);
           response.json().then((data) => {
             if (data.version !== newVersion) {
               self.clients.matchAll().then((clients) => {
