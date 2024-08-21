@@ -14,7 +14,7 @@ export default {
     HelloWorld
   },
   mounted() {
-    setTimeout(() => {
+    setInterval(() => {
       this.checkVersionUpdate();
     }, 5000);
   },
