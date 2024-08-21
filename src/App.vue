@@ -25,10 +25,10 @@ export default {
         .then(response => {
           const currentHash = this.getCurrentVersionHash();
           const indexHTML = response.data;
-          const indexHash = indexHTML.match(/index\.([\w]+)\.js/);
+          const indexHash = indexHTML.match(/app\.([\w]+)\.js/);
           console.log('11111111', currentHash, indexHash);
           if (!indexHash) return;
-          const newHash = indexHTML.match(/index\.([\w]+)\.js/)[1];
+          const newHash = indexHTML.match(/app\.([\w]+)\.js/)[1];
           console.log('22232323', currentHash, newHash);
           if (currentHash !== newHash) {
             // 弹出版本更新提醒
@@ -48,7 +48,7 @@ export default {
         const scriptTags = document.getElementsByTagName('script');
         for (let i = 0; i < scriptTags.length; i++) {
           const src = scriptTags[i].src;
-          const match = src.match(/index\.([\w]+)\.js/);
+          const match = src.match(/app\.([\w]+)\.js/);
           if (match) {
             return match[1];
           }
